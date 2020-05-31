@@ -1,0 +1,17 @@
+export const SET_ALERT = 'SET_ALERT';
+export const REMOVE_ALERT = 'REMOVE_ALERT';
+export const GET_DIETS = 'GET_DIETS';
+export const ADD_DIET = 'ADD_DIET';
+export const REMOVE_DIET = 'REMOVE_DIET';
+export const EDIT_DIET = 'EDIT_DIET';
+export const GET_ORDERS = 'GET_ORDERS';
+export const ADD_ORDERS = 'ADD_ORDERS';
+export const EDIT_ORDERS = 'EDIT_ORDERS';
+export const REMOVE_ORDERS = 'REMOVE_ORDERS';
+export const USER_LOADED = 'USER_LOADED';
+export const USER_UPDATE = 'USER_UPDATE';
+export const GET_RECIPES = 'GET_RECIPES';
+export const ADD_RECIPES = 'ADD_RECIPES';
+export const EDIT_RECIPE = 'EDIT_RECIPE';
+export const REMOVE_RECIPES = 'REMOVE_RECIPES';
+export const LOGOUT = 'LOGOUT';
