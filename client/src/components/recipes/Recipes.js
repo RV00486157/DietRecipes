@@ -1,6 +1,6 @@
 import React , {Fragment, useEffect} from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { getRecipes } from '../../actions/recipes'
 import Display from './Display'
 import Spinner from '../layout/Spinner'
@@ -45,6 +45,8 @@ class Recipes extends React.Component{
     render(){
         return (
             <Fragment>
+            { Object.keys(this.props.user).length === 0 ? <Redirect to="/diets" /> : (
+                    <Fragment>
                 { Object.keys(this.props.user).length > 0 && this.props.user.role === 'admin' && 
                 <Link to="/add_recipes"><button>Add Recipes</button></Link> }
                 <div className="filter">
@@ -60,6 +62,9 @@ class Recipes extends React.Component{
                 </div>
                 {this.state.recipes.length>0?<Display recipes={this.state.recipes}/>:<Spinner/>}
             </Fragment>
+                )
+            }
+        </Fragment> 
         )
     }
     

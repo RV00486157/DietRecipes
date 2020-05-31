@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { recipeSelector } from '../../selectors/recipeSelector'
 import { removeRecipes } from '../../actions/recipes'
 import { addOrders, editOrders, removeOrders } from '../../actions/orders'
+import Spinner from '../layout/Spinner'
 
 const RecipesShow = (props) =>{
     let order = props.orders.find(order=>order.order_placed === false)
@@ -39,7 +40,6 @@ const RecipesShow = (props) =>{
                 if(recipe.quantity === 1){
                     return
                 }
-                console.log("here")
                 const newQuantity = recipe.quantity - 1
                 return Object.assign({}, recipe, {quantity: newQuantity})
 
@@ -51,7 +51,9 @@ const RecipesShow = (props) =>{
         if(order.total === 0){
             const id = order._id
             //order = undefined
-           await props.removeOrders(id)  
+           await props.removeOrders(id)
+            window.location.reload()
+  
             
         }else{
             
@@ -153,7 +155,7 @@ const RecipesShow = (props) =>{
             }
         </Fragment>
         ): (
-            <p>loading</p>
+            <Spinner/>
         )}
         </Fragment>
     )

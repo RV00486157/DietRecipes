@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
+
 import { addRecipes } from '../../actions/recipes'
 import RecipeForm from './RecipeForm'
 
@@ -11,10 +13,25 @@ const RecipeNew = (props) =>{
     }
     return (
         <Fragment>
-            <h2>Add new Recipe</h2>
-            <RecipeForm handleSubmit={handleSubmit}/>
-        </Fragment>
+            {
+                Object.keys(props.user).length > 0 && props.user.role === 'admin' ? (
+                    <Fragment>
+                        <h2>Add new Recipe</h2>
+                         <RecipeForm handleSubmit={handleSubmit}/>
+                    </Fragment>
+                ):(
+
+                    <Redirect to="/diets" />
+                )
+            }
+        </Fragment>  
     )
 }
 
-export default connect(null,{ addRecipes })(RecipeNew)
+const mapStateToProps = state =>{
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps,{ addRecipes })(RecipeNew)

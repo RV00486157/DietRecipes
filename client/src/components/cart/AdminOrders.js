@@ -1,9 +1,13 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 const AdminOrders = (props) =>{
     return(
     <Fragment>
+        {
+            Object.keys(props.user).length > 0 && props.user.role === 'admin' ?
+    (<Fragment>
         <h2>Orders placed successfully</h2>
         <div className="orders">
         <ul>
@@ -29,13 +33,18 @@ const AdminOrders = (props) =>{
             }
         </ul>
         </div>
+    </Fragment>):(
+        <Redirect to="/diets"/>
+    )
+}
     </Fragment>
 )}
 
 const mapStateToProps = state =>{
     return{
         orders: state.orders,
-        recipes: state.recipes
+        recipes: state.recipes,
+        user: state.user
     }
 }
 

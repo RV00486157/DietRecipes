@@ -30,9 +30,10 @@ const Cart = (props) =>{
                 if(recipe.quantity === 1){
                     return
                 }
-                const newQuantity = recipe.quantity - 1
-                return Object.assign({}, recipe, {quantity: newQuantity})
-                
+                // const newQuantity = recipe.quantity - 1
+                // console.log(newQuantity)
+                //return Object.assign({}, recipe, {quantity:  recipe.quantity - 1})
+                return recipe.quantity--
             }else{
                 return Object.assign({},recipe)
             }
@@ -45,13 +46,13 @@ const Cart = (props) =>{
             window.location.reload() 
         }else{
             
-            //console.log(order)
+            console.log(order)
             props.editOrders(order, order._id)
         }
         
         props.editOrders(order, order._id)
     }
-    
+
     return (
         order?(
         <Fragment>

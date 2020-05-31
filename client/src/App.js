@@ -37,7 +37,6 @@ function App() {
 			<Route exact path='/' component={Layout}/>
       <section className="container">
       <Alert/>
-      
       <Switch>
         <Route exact path="/login" component={Login}/>
         <Route exact path="/register" component={Register}/>
