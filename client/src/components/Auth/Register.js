@@ -35,7 +35,6 @@ class Register extends React.Component{
         // }
         registerUser(formData)
         this.props.history.push('/login')
-        console.log(formData)
     }
 
     render(){
@@ -44,15 +43,15 @@ class Register extends React.Component{
                 <h2>Register Form</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="username">Username</label>
-                    <input type="text" name="username" value={this.state.username} onChange={this.handleChange}/>
+                    <input type="text" name="username" value={this.state.username} onChange={this.handleChange} required/>
                     <br/>
 
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" value={this.state.email} onChange={this.handleChange}/>
+                    <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required/>
                     <br/>
 
                     <label htmlFor="password">Password</label>
-                    <input type="password" name="password" value={this.state.password} onChange={this.handleChange}/>
+                    <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required/>
                     <br/>
 
                     {/* <label htmlFor="password2">Password</label>
@@ -60,7 +59,7 @@ class Register extends React.Component{
                     <br/> */}
 
                     <label htmlFor="mobile">Mobile</label>
-                    <input type="mobile" name="mobile" value={this.state.mobile} onChange={this.handleChange}/>
+                    <input type="mobile" name="mobile" value={this.state.mobile} onChange={this.handleChange} required/>
                     <br/>
 
                     <input type="submit" value="Register"/>

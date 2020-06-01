@@ -1,5 +1,6 @@
 import axios from '../config/Axios'
 import { USER_LOADED, USER_UPDATE, LOGOUT } from './types'
+import { setAlert } from './alert'
 
 export const login = (formData) =>{
     axios.post("users/login", formData)
@@ -22,9 +23,14 @@ export const registerUser = (formData) =>{
     axios.post('users/register', formData)
         .then(response=>{
             if(!response.data.hasOwnProperty('errors')){
-                alert('Registered Successfully')
+                alert('Registered Successfully, Login to continue')
             }else{
-                alert('Something went wrong')
+                console.log(response.data)
+                // if(errors){
+                //     errors.forEach(error => dispatch(setAlert(error.msg, 'danger')));
+                // }
+               // dispatch(setAlert('error','danger'))
+                alert(response.data.message)
             }
         })
         .catch(err=>{
@@ -58,7 +64,7 @@ export const update_user = (formData,id) => dispatch =>{
                     payload: response.data
                 })
             }else{
-                alert('Something went wrong')
+                alert(response.data.message)
             }
         })
         .catch(err=>{

@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import axios from '../../config/Axios'
-import {getUser} from '../../actions/user'
-import {login} from '../../actions/user'
+import {getUser, login} from '../../actions/user'
+import {setAlert} from '../../actions/alert'
 
 class Login extends React.Component{
     constructor(){
@@ -34,6 +34,7 @@ class Login extends React.Component{
                     this.props.history.push('/diets')
                 }else{
                     alert('Invalid email/password')
+                    //setAlert('Invalid email/password', 'danger')
                 }
                 
             })
@@ -76,4 +77,4 @@ const mapStateToProps =(state)=>{
     }
 }
 
-export default connect(mapStateToProps,{getUser, login})(Login)
+export default connect(mapStateToProps,{getUser, login, setAlert})(Login)
