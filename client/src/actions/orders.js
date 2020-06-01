@@ -12,7 +12,7 @@ export const getOrders = (user) => dispatch =>{
             }
         })
         .catch(err=>{
-
+            alert('Something went wrong')
         })
 }
 
@@ -30,7 +30,7 @@ export const addOrders = (formData) => dispatch =>{
             }
         })
         .catch(err=>{
-
+            alert('Something went wrong')
         })
 }
 
@@ -49,6 +49,7 @@ export const editOrders = (formData,id) => dispatch =>{
             }
         })
         .catch(err=>{
+            alert('Something went wrong')
             console.log(err)
         })
 }
@@ -67,6 +68,6 @@ export const removeOrders = (id) => dispatch =>{
             }
         })
         .catch(err=>{
-            
+            alert('Something went wrong')
         })
 }

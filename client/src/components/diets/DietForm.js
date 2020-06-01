@@ -47,10 +47,10 @@ class DietForm extends React.Component{
         return(
             <form onSubmit={this.handleSubmit}className='form'>
                 <label htmlFor='kind_of_diet'>Kind of Diet</label>
-                <input type='text' value={this.state.kind_of_diet} name='kind_of_diet' onChange={this.handleChange}/>
+                <input type='text' value={this.state.kind_of_diet} name='kind_of_diet' onChange={this.handleChange} required/>
                 <br/>
                 <label htmlFor='description'>Description</label>
-                <textarea value={this.state.description} name='description' onChange={this.handleChange}/>
+                <textarea value={this.state.description} name='description' onChange={this.handleChange} required/>
                 <br/>
                 {/* <label htmlFor='Preference'>Preference</label>
                 <input type='text' value={this.state.Preference} name='Preference' onChange={this.handleChange}/>

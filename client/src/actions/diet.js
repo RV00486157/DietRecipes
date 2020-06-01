@@ -10,7 +10,7 @@ export const getDiets = () => dispatch =>{
             })
         })
         .catch(err=>{
-            
+            alert('Something went wrong')
         })
 }
 
@@ -30,7 +30,7 @@ export const editDiets = (formData, id) => dispatch =>{
             }
         })
         .catch(err=>{
-            
+            alert('Something went wrong')
         })
 }
 
@@ -47,7 +47,7 @@ export const addDiets = (formData) => dispatch =>{
             }
         })
         .catch(err=>{
-            
+            alert('Something went wrong')
         })
 }
 
@@ -62,6 +62,6 @@ export const removeDiets = (id) => dispatch =>{
             }
         })
         .catch(err=>{
-
+            alert('Something went wrong')
         })
 }

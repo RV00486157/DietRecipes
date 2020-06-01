@@ -72,7 +72,7 @@ class RecipeForm extends React.Component{
             <Fragment>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="name">Name</label>
-                    <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
+                    <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required/>
                     <br/>
 
                     {/* <label htmlFor="image">Image</label>
@@ -80,31 +80,31 @@ class RecipeForm extends React.Component{
                     <br/> */}
 
                     <label htmlFor="description">Description</label>
-                    <textarea name="description" onChange={this.handleChange} value={this.state.description} cols="60"/>
+                    <textarea name="description" onChange={this.handleChange} value={this.state.description} cols="60" required/>
                     <br/>
 
                     <label htmlFor="ingredients">Ingredients</label>
-                    <textarea name="ingredients" onChange={this.handleChange} value={this.state.ingredients} cols="60"/>
+                    <textarea name="ingredients" onChange={this.handleChange} value={this.state.ingredients} cols="60" required/>
                     <br/>
 
                     <label htmlFor="steps">Steps</label>
-                    <textarea name="steps" onChange={this.handleChange} value={this.state.steps} cols="60"/>
+                    <textarea name="steps" onChange={this.handleChange} value={this.state.steps} cols="60" required/>
                     <br/>
 
                     <label htmlFor="calories">Calories</label>
-                    <input type="text" name="calories" onChange={this.handleChange} value={this.state.calories}/>
+                    <input type="text" name="calories" onChange={this.handleChange} value={this.state.calories} required/>
                     <br/>
 
                     <label htmlFor="serving">Serving</label>
-                    <input type="text" name="serving" onChange={this.handleChange} value={this.state.serving}/>
+                    <input type="text" name="serving" onChange={this.handleChange} value={this.state.serving} required/>
                     <br/>
 
                     <label htmlFor="price">Price</label>
-                    <input type="text" name="price" onChange={this.handleChange} value={this.state.price}/>
+                    <input type="text" name="price" onChange={this.handleChange} value={this.state.price} required/>
                     <br/>
 
                     <label htmlFor="type">Type</label>
-                    <select value={this.state.type} onChange={this.handleChange} name="type">
+                    <select value={this.state.type} onChange={this.handleChange} name="type" required>
                         <option value="">Select type</option>
                         <option value="Vegetarian">Vegetarian</option>
                         <option value="Non-Vegetarian">Non-vegetarian</option>
@@ -113,7 +113,7 @@ class RecipeForm extends React.Component{
                     </select>
 
                     <label htmlFor="diet">Diet type</label>
-                    <select value={this.state.diet} onChange={this.handleChange} name="diet">
+                    <select value={this.state.diet} onChange={this.handleChange} name="diet" required>
                         <option value="">Select type</option>
                         {
                             this.props.diets&& this.props.diets.map(diet=>{

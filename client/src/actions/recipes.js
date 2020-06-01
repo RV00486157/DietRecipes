@@ -20,11 +20,12 @@ export const addRecipes = (formData) => dispatch =>{
                     payload: response.data
                 })
             }else{
+                alert('Something went wrong')
                 console.log(response.data)
             }
         })
         .catch(err=>{
-
+            alert('Something went wrong')
         })
 }
 
@@ -40,11 +41,12 @@ export const editRecipes = (formData, id) => dispatch =>{
                     } 
                 })
             }else{
+                alert('Something went wrong')
                 console.log(response.data)
             }
         })
         .catch(err=>{
-
+            alert('Something went wrong')
         })
 }
 
@@ -61,6 +63,6 @@ export const removeRecipes = (id) => dispatch =>{
             }
         })
         .catch(err=>{
-            
+            alert('Something went wrong')
         })
 }
