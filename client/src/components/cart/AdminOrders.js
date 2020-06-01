@@ -9,12 +9,12 @@ const AdminOrders = (props) =>{
             Object.keys(props.user).length > 0 && props.user.role === 'admin' ?
     (<Fragment>
         <h2>Orders placed successfully</h2>
-        <div className="orders">
+        <div>
         <ul>
             {
                 props.orders.map(order=>{
                     if(order.order_placed === true){
-                        return <li key={order._id}>
+                        return <li key={order._id} className="orders">
                                     <h5>User: {order.user.username}</h5>
                                     <h5>Address: {order.user.address}</h5>
                                     <h5>Mobile: {order.user.mobile}</h5>
@@ -27,6 +27,7 @@ const AdminOrders = (props) =>{
                                     }</p>
                                     </ul>
                                     <p>Total: {order.total}</p>
+                                    <p>Payment Method: {order.payment_method}</p>
                                 </li>
                     }
                 })

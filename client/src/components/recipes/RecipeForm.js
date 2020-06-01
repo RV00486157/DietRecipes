@@ -75,9 +75,9 @@ class RecipeForm extends React.Component{
                     <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
                     <br/>
 
-                    <label htmlFor="image">Image</label>
+                    {/* <label htmlFor="image">Image</label>
                     <input type="file" name="image" onChange= {this.onChangeImage} />
-                    <br/>
+                    <br/> */}
 
                     <label htmlFor="description">Description</label>
                     <textarea name="description" onChange={this.handleChange} value={this.state.description} cols="60"/>

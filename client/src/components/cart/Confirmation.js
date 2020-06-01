@@ -26,6 +26,7 @@ const OrderConfirmed = (props) =>(
                                     }</p>
                                     </ul>
                                     <p>Total: {order.total}</p>
+                                    <p>Payment Method: {order.payment_method}</p>
                                 </li>
                     }
                 })

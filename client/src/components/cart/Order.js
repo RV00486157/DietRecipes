@@ -38,6 +38,7 @@ const Order = (props) =>{
                 }
             </ul>
             <p>Total: {order.total}</p>
+            <p>Payment Method: cash</p>
             <button onClick={()=>handleConfirm(order._id)}>Confirm Order</button>
         </Fragment>
         )
