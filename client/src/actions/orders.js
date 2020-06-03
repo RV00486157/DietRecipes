@@ -12,7 +12,7 @@ export const getOrders = (user) => dispatch =>{
             }
         })
         .catch(err=>{
-            alert('Something went wrong')
+            //alert('Something went wrong')
         })
 }
 
